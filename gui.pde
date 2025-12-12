@@ -160,6 +160,10 @@ public void createGUI(){
   TEXT.setPromptText("TYPE TEXT HERE");
   TEXT.setOpaque(true);
   TEXT.addEventHandler(this, "textbox_clicked");
+  myLabel = new GLabel(this, 50, 100, 120, 20);
+  myLabel.setText("Size Slider");
+  myLabel.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
+  myLabel.setLocalColor(2, color(255, 255, 255));
 }
 
 // Variable declarations 
@@ -178,3 +182,4 @@ GCheckbox contrast;
 GCheckbox schattmanify; 
 GButton reset; 
 GTextField TEXT; 
+GLabel myLabel;
