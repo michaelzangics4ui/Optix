@@ -77,7 +77,7 @@ void draw() {
     fill(#0a1929);
     rect(width*0.868,height*0.190, 140, 20);
     rect(39,115,120,30);
-    rect(40, 23, 120, 80); // Covers the entire dropdown menu area
+     // Covers the entire dropdown menu area
     rect(40, 103, 120, 60);
     pushStyle();
     fill(255);
