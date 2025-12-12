@@ -15,10 +15,10 @@ boolean greyScaleActive;
 boolean greyScaleClicked;
 boolean contrastActive;
 boolean contrastClicked;
-int tlbx = 24; //Top left Corner of image box
+int tlbx = 24;
 int tlby = 173;
-int brbx = 1181-tlbx; //Width of image box
-int brby = 645-tlby; 
+int brbx = 1181-tlbx;
+int brby = 645-tlby;
 PImage background;
 boolean dropStatus;
 
@@ -27,7 +27,7 @@ void setup() {
     createGUI();
     size(1200,675);
     background(255);
-    background = loadImage("Crop.png");
+    background = loadImage("Crop.jpg");
     image(background,0,0, width, height);
     currentTool = new Tool(1);
     sample = loadImage("guy.jpg"); // LOAD PREFERRED FILE HERE
@@ -66,6 +66,8 @@ void draw() {
    
 
     }
+
+
    // fill(255);
     //rect(1214, 141, 100, 30);
     fill(255);
@@ -75,13 +77,15 @@ void draw() {
     fill(#0a1929);
     rect(width*0.868,height*0.190, 140, 20);
     rect(39,115,120,30);
+    rect(40, 23, 120, 80); // Covers the entire dropdown menu area
+    rect(40, 103, 120, 60);
     pushStyle();
     fill(255);
     text("Current Tool: " + currentTool.type, width*0.868,height*0.207);
 
     //println(mouseX, mouseY);
     if (currentTool != null) {
-      //println(currentTool.type);
+      println(currentTool.type);
     }
 
 

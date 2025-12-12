@@ -1,5 +1,6 @@
 void greyScale() {
     currentTool = new Tool(5);
+    lastScreen = get(tlbx, tlby, brbx, brby);
     pushStyle();
     PImage currScreen = get();
     loadPixels();
@@ -24,6 +25,7 @@ void greyScale() {
 
 void contrast(float C) {
     currentTool = new Tool(5);
+    lastScreen = get(tlbx, tlby, brbx, brby);
     pushStyle();
     PImage currScreen = get();
     loadPixels();

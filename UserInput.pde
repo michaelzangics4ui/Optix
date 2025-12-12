@@ -5,7 +5,7 @@ PImage lastScreen;
 
 void mouseDragged() {
     // Only allow dragging below y=200, so tools won't affect the gui buttons.
-    if (mouseY > 200 && pmouseY > 200) {
+    if (mouseY > 180 && pmouseY > 180) {
         isMouseDragged = true;
     } 
     else {
@@ -15,7 +15,7 @@ void mouseDragged() {
 
 void mouseReleased() {
         isMouseDragged = false;
-        if (currentTool != null && mouseY > 200) {
+        if (currentTool != null && mouseY > 180) {
             currentTool.toolDone();
         }
         bottomRight = new PVector(mouseX, mouseY);
@@ -81,7 +81,7 @@ void mousePressed() {
         textBoxActive = false;
     }
         // Check if mouse is in the button area (above y=200)
-    if (mouseY < 200) {
+    if (mouseY < 180) {
         //println("Buton Area Clicked - Tool Action Skipped");
         return; // Doesn't apply whatever the current tool is on the button interface.
     }

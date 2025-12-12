@@ -164,6 +164,7 @@ public void createGUI(){
   myLabel.setText("Size Slider");
   myLabel.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
   myLabel.setLocalColor(2, color(255, 255, 255));
+
 }
 
 // Variable declarations 
@@ -181,5 +182,5 @@ GCheckbox greyscale;
 GCheckbox contrast; 
 GCheckbox schattmanify; 
 GButton reset; 
-GTextField TEXT; 
+GTextField TEXT;
 GLabel myLabel;

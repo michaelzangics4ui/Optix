@@ -52,6 +52,7 @@ class ZoomIn extends Tool {
 }
 
 
+
 class ZoomOut extends Tool {
   float zoomFactor = 0.67; 
   Tool prev;
@@ -60,18 +61,22 @@ class ZoomOut extends Tool {
     super(s);
     type = "ZoomOut";
     prev = p;
-  }
-  void update(){
     
-    if (zoomCount <= 0) {
+    if (zoomCount == 0) {
+        fullImage = get(tlbx, tlby, brbx, brby);
+    }
+  }
+  
+  void update(){
+    if (zoomCount <= -5) {
       println("Can only zoom out 5 times!");
       println("You can zoom in to back, or click RESET.");
       currentTool = new Tool(1);
       return;
     }    
-
-    int newWidth = int (imgWidth);
-    int newHeight = int(imgHeight);
+    
+    int newWidth = int(fullImage.width * zoomFactor);
+    int newHeight = int(fullImage.height * zoomFactor);
     
     PImage zoomedImage = fullImage.copy();
     zoomedImage.resize(newWidth, newHeight);
@@ -79,8 +84,9 @@ class ZoomOut extends Tool {
     fullImage = zoomedImage;
     
     noStroke();
-    image(background,0,0, width, height);
-    image(fullImage, tlbx, tlby, brbx, brby);
+    image(background, 0, 0, width, height);
+    image(fullImage, tlbx, tlby);
+    
     pushStyle();
     fill(#0a1929);
     rect(0, brby+tlby+9, width, height);
@@ -92,6 +98,5 @@ class ZoomOut extends Tool {
    
     zoomCount -= 1;
     currentTool = new Tool(1);
-    
   }
 }
